@@ -8,7 +8,7 @@ WORKDIR /app
 COPY . .
 
 # 安装依赖
-RUN npm install
+RUN npm install --legacy-peer-deps
 
 # 启动服务
 CMD ["npm", "start"]
