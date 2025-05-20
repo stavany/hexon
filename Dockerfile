@@ -1,14 +1,14 @@
-# 使用官方 Node 镜像
 FROM node:18
 
-# 设置工作目录
 WORKDIR /app
 
-# 拷贝文件
+# 安装 pnpm
+RUN npm install -g pnpm
+
 COPY . .
 
-# 安装依赖
+# 忽略 peer 依赖冲突
 RUN npm install --legacy-peer-deps
 
-# 启动服务
 CMD ["npm", "start"]
+
